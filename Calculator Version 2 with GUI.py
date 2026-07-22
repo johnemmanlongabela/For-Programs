@@ -100,6 +100,14 @@ def button_clicked(value):
             result = float(label["text"])/100
             label["text"] = remove_zero_decimal(result)
     else:
+         if value == "√":
+            num = float(label["text"])
+
+            if num >= 0:
+                result = math.sqrt(num)
+                label["text"] = remove_zero_decimal(result)
+            else:
+                label["text"] = "Error"
         if value == ".":
             if value not in label["text"]:
                 label["text"]+= value
